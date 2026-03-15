@@ -8,8 +8,8 @@ const nextConfig = {
   },
   output: 'export',
   trailingSlash: true,
-  basePath: '',
-  assetPrefix: '',
+  basePath: '/Pannonian',
+  assetPrefix: '/Pannonian',
 }
 
 export default nextConfig
