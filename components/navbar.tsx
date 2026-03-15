@@ -5,6 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { useI18n, type Locale } from "@/lib/i18n"
+import { withBasePath } from "@/lib/utils"
 import { Menu, X } from "lucide-react"
 
 export function Navbar() {
@@ -55,7 +56,7 @@ export function Navbar() {
           {/* Logo - switches between dark and light version based on scroll */}
           <Link href="/" className="flex items-center md:flex-1" aria-label="Pannonian Logistics - Kthehu në faqen kryesore">
             <Image
-              src={scrolled ? "/logos/footer-logo.png" : "/logos/logo-white.png"}
+              src={withBasePath(scrolled ? "/logos/footer-logo.png" : "/logos/logo-white.png")}
               alt="Pannonian Logistics logo"
               width={300}
               height={120}

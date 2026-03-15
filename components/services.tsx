@@ -2,6 +2,7 @@
 
 import { useI18n } from "@/lib/i18n"
 import Image from "next/image"
+import { withBasePath } from "@/lib/utils"
 
 const services = [
   {
@@ -44,7 +45,7 @@ export function Services() {
                 {/* Image */}
                 <div className="relative aspect-[4/3] overflow-hidden bg-muted">
                   <Image
-                    src={service.image}
+                    src={withBasePath(service.image)}
                     alt={t(`services.${service.key}.title`)}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"

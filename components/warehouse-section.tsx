@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
+import { withBasePath } from "@/lib/utils"
 
 export function WarehouseSection() {
   const sectionRef = useRef<HTMLDivElement>(null)
@@ -28,7 +29,7 @@ export function WarehouseSection() {
         style={{ transform: `translateY(${offsetY}px) scale(1.3)` }}
       >
         <Image
-          src="/media/warehouse-facility.jpg"
+          src={withBasePath("/media/warehouse-facility.jpg")}
           alt="Pannonian Logistics warehouse facility operations"
           fill
           className="object-cover"

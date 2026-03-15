@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { RotatingText } from "@/components/rotating-text"
 import Image from "next/image"
 import Link from "next/link"
+import { withBasePath } from "@/lib/utils"
 import { ChevronDown } from "lucide-react"
 
 export function Hero() {
@@ -14,7 +15,7 @@ export function Hero() {
     <section className="relative overflow-hidden" style={{ height: "80vh", minHeight: "520px" }}>
       {/* Full-screen background image */}
       <Image
-        src="/media/hero-truck-mockup.jpg"
+        src={withBasePath("/media/hero-truck-mockup.jpg")}
         alt="Pannonian Logistics branded truck on highway"
         fill
         className="object-cover object-center"

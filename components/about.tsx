@@ -5,6 +5,7 @@ import Link from "next/link"
 import { useI18n } from "@/lib/i18n"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import { withBasePath } from "@/lib/utils"
 
 export function About() {
   const { t } = useI18n()
@@ -38,7 +39,7 @@ export function About() {
               style={{ transform: `translateY(${offsetY}px) scale(1.1)` }}
             >
               <Image
-                src="/media/about-image.jpg"
+                src={withBasePath("/media/about-image.jpg")}
                 alt="Pannonian Logistics warehouse operations"
                 fill
                 className="object-cover"

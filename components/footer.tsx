@@ -3,6 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { useI18n } from "@/lib/i18n"
+import { withBasePath } from "@/lib/utils"
 
 export function Footer() {
   const { t } = useI18n()
@@ -15,7 +16,7 @@ export function Footer() {
           <div className="flex flex-col items-center gap-4 md:items-start">
             <Link href="/" aria-label="Pannonian Logistics - Kthehu në faqen kryesore">
               <Image
-                src="/logos/footer-logo-white.png"
+                src={withBasePath("/logos/footer-logo-white.png")}
                 alt="Pannonian Logistics logo"
                 width={240}
                 height={60}

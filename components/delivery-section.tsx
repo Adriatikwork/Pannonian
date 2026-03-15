@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
 import { useI18n } from "@/lib/i18n"
+import { withBasePath } from "@/lib/utils"
 
 export function DeliverySection() {
   const { t, locale } = useI18n()
@@ -46,7 +47,7 @@ export function DeliverySection() {
               style={{ transform: `translateY(${offsetY}px) scale(1.1)` }}
             >
               <Image
-                src="/media/delivery-placeholder.jpg"
+                src={withBasePath("/media/delivery-placeholder.jpg")}
                 alt="Safe and secure delivery"
                 fill
                 className="object-cover"
