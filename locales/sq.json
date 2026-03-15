@@ -1,0 +1,100 @@
+{
+  "nav": {
+    "home": "Ballina",
+    "services": "Shërbimet",
+    "about": "Rreth Nesh",
+    "contact": "Kontakti"
+  },
+  "hero": {
+    "title": "Mallrat Tuaja. Përgjegjësia Jonë.",
+    "description": "Zgjidhje të shpejta, të sigurta dhe të besueshme për transport dhe logjistikë në Kosovë dhe përtej — të trajtuara me kujdes në çdo hap.",
+    "cta": "Kërko ofertë tani",
+    "learnMore": "Mëso më shumë rreth nesh",
+    "rotating": {
+      "prefix": "Specialistë në",
+      "transport": "Transport",
+      "logistics": "Logjistikë",
+      "storage": "Ruajtje"
+    }
+  },
+  "stats": {
+    "label": "Statistikat e kompanisë",
+    "deliveries": { "value": "500+", "label": "Dërgesa të Kryera" },
+    "countries": { "value": "3", "label": "Shtete të Shërbyera" },
+    "experience": { "value": "10+", "label": "Vite Përvojë" },
+    "trucks": { "value": "20+", "label": "Automjete në Flotë" }
+  },
+  "about": {
+    "title": "Rreth Nesh",
+    "description": "Pannonian Logistics është një kompani e specializuar në transport dhe logjistikë, e përkushtuar për të ofruar zgjidhje të besueshme dhe efikase për klientët tanë. Me një flotë moderne dhe staf profesional, ne garantojmë shërbime të shkëlqyera në çdo hap.",
+    "cta": "Na Kontakto"
+  },
+  "services": {
+    "title": "Shërbimet Tona",
+    "description": "Shërbimet tona mbulojnë një gamë të gjerë nevojash transporti, përfshirë transportin afatgjatë në kontratë, shërbimet ekspress dhe zgjidhje transporti të specializuara të përshtatshme sipas kërkesave tuaja.",
+    "transport": {
+      "title": "Transporti i Mallrave",
+      "description": "Ofrojmë transport të shpejtë dhe të sigurt për mallrat tuaja me një flotë të sigurtë në kontigjentin dhe sigurisë e dërguesve."
+    },
+    "logistics": {
+      "title": "Logjistikë",
+      "description": "Përdorim teknologji moderne dhe zgjidhje profesionale për menaxhimin e inventarit dhe organizimin e dërgesave tuaja."
+    },
+    "storage": {
+      "title": "Ruajtje dhe menaxhim",
+      "description": "Ofrojmë zgjidhje të personalizuara për ruajtjen dhe menaxhimin e inventarit tuaj në ambiente të sigurta dhe të kontrolluana."
+    }
+  },
+  "trust": {
+    "title": "Rri i Sigurt: Mallrat Tuaja Janë në Duar të Sigurta",
+    "description": "Transport dhe menaxhim i sigurt i mallrave nga ekip i kualifikuar. Ne sigurojmë që çdo dërgesë të trajtohet me kujdes dhe efikasitet."
+  },
+  "delivery": {
+    "title": "Rri i Sigurt: Mallrat Tuaja Janë në Duar të Sigurta",
+    "description": "Transport dhe menaxhim i sigurt i mallrave nga ekipi ynë i kualifikuar. Ne sigurojmë që çdo dërgese të trajtohet me kujdes dhe efikasitet."
+  },
+  "whyUs": {
+    "title": "PSE TË NA ZGJIDHNI NE?",
+    "subtitle": "Ne jemi më të mirët në atë që bëjmë sepse:",
+    "security": {
+      "title": "Siguri",
+      "subtitle": "Prioriteti Kryesor",
+      "description": "Tek ne, siguria është prioriteti jonë kryesor. Ne ndjekim protokolle të rrepta sigurie për të garantuar mbrojtjen e ngarkesës suaj dhe misionin e asetëteve të ekipit tonë."
+    },
+    "efficiency": {
+      "title": "Efikasitet",
+      "subtitle": "Koha ka vlerë",
+      "description": "Efikasiteti është në qendër të operacioneve tona. Ne optimizojmë rrugët, digjitalizojmë processet dhe përdorim teknologjinë më të fundit për t'ju ofruar shërbime transporti të shpejta dhe të besueshme."
+    },
+    "customer": {
+      "title": "Fokus ndaj klientit",
+      "subtitle": "Kënaqësia juaj",
+      "description": "Biznesi ynë është rreth klientëve tanë. Ne obligohemi ndaj nevojave tuaja, i përgjigjem shpejt kërkesave dhe gjithmonë përpiqemi të tejkalojmë pritshmëritë tuaja me shërbimin tonë të personalizuar. Për këtë arsye, ofrojmë zgjidhje fleksibël dhe kosto konkurruese për t'ju përmbushur sa më mirë nevojave tuaja."
+    }
+  },
+  "contact": {
+    "title": "Na kontaktoni",
+    "description": "Kontaktoni Pannonian Logistics për shërbime transporti të besueshme dhe efikase. Ekipi ynë është i gatshëm t'ju ndihmojë me nevojat tuaja të transportit.",
+    "firstName": "Emri",
+    "lastName": "Mbiemri",
+    "email": "Email adresa",
+    "phone": "Numri i telefonit",
+    "subject": "Subjekti",
+    "message": "Mesazhi",
+    "submit": "Dërgo",
+    "successTitle": "Mesazhi u dërgua!",
+    "successMessage": "Do t'ju kontaktojmë së shpejti.",
+    "sendAnother": "Dërgo një mesazh tjetër"
+  },
+  "footer": {
+    "tagline": "Transport dhe Logjistikë",
+    "phone": "044 123 389",
+    "email": "info@pannonianlogistics.com",
+    "address": "Adresa: Rreto 06, p.n. 10000,",
+    "country": "Arbëri · Republika e Kosovës",
+    "privacy": "Privacy Policy",
+    "accessibility": "Accessibility Statement",
+    "copyright": "© 2025 Pannonian Logistics. Të gjitha të drejtat e rezervuara."
+  }
+}
+

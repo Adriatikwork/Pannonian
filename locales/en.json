@@ -1,0 +1,100 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Your Goods. Our Responsibility.",
+    "description": "Fast, secure, and reliable transport and logistics solutions across Kosovo and beyond — handled with care at every step.",
+    "cta": "Request a Quote",
+    "learnMore": "Learn more about us",
+    "rotating": {
+      "prefix": "Specialists in",
+      "transport": "Transport",
+      "logistics": "Logistics",
+      "storage": "Storage"
+    }
+  },
+  "stats": {
+    "label": "Company statistics",
+    "deliveries": { "value": "500+", "label": "Deliveries Completed" },
+    "countries": { "value": "3", "label": "Countries Served" },
+    "experience": { "value": "10+", "label": "Years of Experience" },
+    "trucks": { "value": "20+", "label": "Vehicles in Fleet" }
+  },
+  "about": {
+    "title": "About Us",
+    "description": "Pannonian Logistics is a company specialized in transport and logistics, dedicated to providing reliable and efficient solutions for our clients. With a modern fleet and professional staff, we guarantee excellent services at every step.",
+    "cta": "Contact Us"
+  },
+  "services": {
+    "title": "Our Services",
+    "description": "Our services cover a wide range of transport needs, including long-term contract transportation, express services, and specialized transport solutions tailored to your requirements.",
+    "transport": {
+      "title": "Freight Transport",
+      "description": "We offer fast and secure transport for your goods with a fleet that ensures safety and reliability for all shipments."
+    },
+    "logistics": {
+      "title": "Logistics",
+      "description": "We use modern technology and professional solutions for inventory management and organizing your shipments."
+    },
+    "storage": {
+      "title": "Storage and Management",
+      "description": "We offer personalized solutions for storage and inventory management in secure and controlled environments."
+    }
+  },
+  "trust": {
+    "title": "Stay Secure: Your Goods Are in Safe Hands",
+    "description": "Secure transport and management of goods by a qualified team. We ensure that every shipment is handled with care and efficiency."
+  },
+  "delivery": {
+    "title": "Safe and Secure: Your Goods Are in Good Hands",
+    "description": "Safe and professional handling of goods by our qualified team. We ensure that every shipment is treated with care and efficiency."
+  },
+  "whyUs": {
+    "title": "WHY CHOOSE US?",
+    "subtitle": "We are the best at what we do because:",
+    "security": {
+      "title": "Security",
+      "subtitle": "Top Priority",
+      "description": "With us, security is our top priority. We follow strict safety protocols to ensure the protection of your cargo and our team's assets."
+    },
+    "efficiency": {
+      "title": "Efficiency",
+      "subtitle": "Time is Valuable",
+      "description": "Efficiency is at the core of our operations. We optimize routes, digitize processes, and use the latest technology to offer you fast and reliable transport services."
+    },
+    "customer": {
+      "title": "Customer Focus",
+      "subtitle": "Your Satisfaction",
+      "description": "Our business revolves around our customers. We commit to your needs, respond quickly to requests, and always strive to exceed your expectations with personalized service. For this reason, we offer flexible solutions and competitive costs to best meet your needs."
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "description": "Contact Pannonian Logistics for reliable and efficient transport services. Our team is ready to help you with your transport needs.",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email address",
+    "phone": "Phone number",
+    "subject": "Subject",
+    "message": "Message",
+    "submit": "Send",
+    "successTitle": "Message sent!",
+    "successMessage": "We will get back to you shortly.",
+    "sendAnother": "Send another message"
+  },
+  "footer": {
+    "tagline": "Transport and Logistics",
+    "phone": "044 123 389",
+    "email": "info@pannonianlogistics.com",
+    "address": "Address: Rreto 06, p.n. 10000,",
+    "country": "Arbëri · Republic of Kosovo",
+    "privacy": "Privacy Policy",
+    "accessibility": "Accessibility Statement",
+    "copyright": "© 2025 Pannonian Logistics. All rights reserved."
+  }
+}
+
