@@ -4,14 +4,13 @@ import { useRef, useState, useEffect, useCallback } from "react"
 import Link from "next/link"
 import { useI18n } from "@/lib/i18n"
 import { Button } from "@/components/ui/button"
-
-const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || ''
+import { withBasePath } from "@/lib/utils"
 
 // Local video clips from public/media/videos
 const CLIPS = [
-  { src: `${BASE_PATH}/media/videos/1.mp4`, duration: 5000 },
-  { src: `${BASE_PATH}/media/videos/2.mp4`, duration: 5000 },
-  { src: `${BASE_PATH}/media/videos/3.mp4`, duration: 5000 },
+  { src: withBasePath("/media/videos/1.mp4"), duration: 5000 },
+  { src: withBasePath("/media/videos/2.mp4"), duration: 5000 },
+  { src: withBasePath("/media/videos/3.mp4"), duration: 5000 },
 ]
 
 export function About() {

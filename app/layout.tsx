@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
+import { withBasePath } from '@/lib/utils'
 
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/og-image.jpg',
+        url: withBasePath('/og-image.jpg'),
         width: 1200,
         height: 630,
         alt: 'Pannonian Logistics — Transport dhe Logjistikë',
@@ -55,17 +56,17 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Pannonian Logistics | Transport dhe Logjistikë në Kosovë',
     description: 'Zgjidhja juaj e besueshme për transport dhe logjistikë në Kosovë.',
-    images: ['/og-image.jpg'],
+    images: [withBasePath('/og-image.jpg')],
   },
   icons: {
     icon: [
-      { url: '/icon-light-32x32.png', media: '(prefers-color-scheme: light)' },
-      { url: '/icon-dark-32x32.png', media: '(prefers-color-scheme: dark)' },
-      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: withBasePath('/icon-light-32x32.png'), media: '(prefers-color-scheme: light)' },
+      { url: withBasePath('/icon-dark-32x32.png'), media: '(prefers-color-scheme: dark)' },
+      { url: withBasePath('/icon.svg'), type: 'image/svg+xml' },
     ],
-    apple: '/apple-icon.png',
+    apple: withBasePath('/apple-icon.png'),
   },
-  manifest: '/manifest.json',
+  manifest: withBasePath('/manifest.json'),
   robots: {
     index: true,
     follow: true,
@@ -111,7 +112,7 @@ export const metadata: Metadata = {
 
     // Microsoft tags
     'msapplication-TileColor': '#110375',
-    'msapplication-config': '/browserconfig.xml',
+    'msapplication-config': withBasePath('/browserconfig.xml'),
   },
 }
 
@@ -193,8 +194,8 @@ const localBusinessSchema = {
       }
     ]
   },
-  logo: 'https://pannonianlogistics.com/logos/footer-logo.png',
-  image: 'https://pannonianlogistics.com/og-image.jpg',
+  logo: `https://pannonianlogistics.com${withBasePath('/logos/footer-logo.png')}`,
+  image: `https://pannonianlogistics.com${withBasePath('/og-image.jpg')}`,
   knowsLanguage: ['sq', 'en'],
   paymentAccepted: 'Cash, Bank Transfer',
   currenciesAccepted: 'EUR'
@@ -207,7 +208,7 @@ const organizationSchema = {
   '@id': 'https://pannonianlogistics.com/#organization',
   name: 'Pannonian Logistics',
   url: 'https://pannonianlogistics.com',
-  logo: 'https://pannonianlogistics.com/logos/footer-logo.png',
+  logo: `https://pannonianlogistics.com${withBasePath('/logos/footer-logo.png')}`,
   description: 'Professional logistics and freight transport company',
   contactPoint: [
     {

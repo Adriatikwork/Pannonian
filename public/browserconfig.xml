@@ -2,7 +2,7 @@
 <browserconfig>
     <msapplication>
         <tile>
-            <square150x150logo src="/icon.svg"/>
+            <square150x150logo src="/Pannonian/icon.svg"/>
             <TileColor>#110375</TileColor>
         </tile>
     </msapplication>
