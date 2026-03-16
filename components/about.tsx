@@ -1,50 +1,60 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useRef, useState, useEffect, useCallback } from "react"
 import Link from "next/link"
 import { useI18n } from "@/lib/i18n"
 import { Button } from "@/components/ui/button"
-import Image from "next/image"
-import { withBasePath } from "@/lib/utils"
+
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || ''
+
+// Local video clips from public/media/videos
+const CLIPS = [
+  { src: `${BASE_PATH}/media/videos/1.mp4`, duration: 5000 },
+  { src: `${BASE_PATH}/media/videos/2.mp4`, duration: 5000 },
+  { src: `${BASE_PATH}/media/videos/3.mp4`, duration: 5000 },
+]
 
 export function About() {
   const { t } = useI18n()
-  const imageRef = useRef<HTMLDivElement>(null)
-  const [offsetY, setOffsetY] = useState(0)
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  const advanceClip = useCallback((nextIndex: number) => {
+    const video = videoRef.current
+    if (!video) return
+    video.src = CLIPS[nextIndex].src
+    video.load()
+    video.play().catch(() => {})
+
+    if (timerRef.current) clearTimeout(timerRef.current)
+    timerRef.current = setTimeout(() => {
+      advanceClip((nextIndex + 1) % CLIPS.length)
+    }, CLIPS[nextIndex].duration)
+
+    setCurrentIndex(nextIndex)
+  }, [])
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (imageRef.current) {
-        const rect = imageRef.current.getBoundingClientRect()
-        const scrollProgress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height)
-        setOffsetY(scrollProgress * 50)
-      }
-    }
-
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    advanceClip(0)
+    return () => { if (timerRef.current) clearTimeout(timerRef.current) }
+  }, [advanceClip])
 
   return (
     <section id="about" className="bg-background py-20 md:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          {/* Image with Parallax */}
-          <div
-            ref={imageRef}
-            className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-muted shadow-xl"
-          >
-            <div
-              className="absolute inset-0 transition-transform duration-75 ease-out"
-              style={{ transform: `translateY(${offsetY}px) scale(1.1)` }}
-            >
-              <Image
-                src={withBasePath("/media/about-image.jpg")}
-                alt="Pannonian Logistics warehouse operations"
-                fill
-                className="object-cover"
-              />
-            </div>
+          {/* Sharp-cut video montage — no transitions, feels like one continuous video */}
+          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-muted shadow-xl">
+            <video
+              ref={videoRef}
+              autoPlay
+              muted
+              playsInline
+              aria-label="Logistics footage — trucks on highway and container ships at port"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+            <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-black/10" />
           </div>
 
           {/* Content */}

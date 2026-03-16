@@ -6,7 +6,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "export": "next build",
+    "deploy": "pnpm build",
+    "docker:build": "docker build -t pannonian-logistics .",
+    "docker:run": "docker-compose up pannonian-app",
+    "docker:dev": "docker-compose up pannonian-dev",
+    "docker:stop": "docker-compose down",
+    "docker:logs": "docker-compose logs -f"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
