@@ -47,8 +47,8 @@ export function Navbar() {
       <header
         role="banner"
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
-            ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-black/5"
-            : "bg-transparent"
+          ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-black/5"
+          : "bg-transparent"
           }`}
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -79,8 +79,8 @@ export function Navbar() {
                       href={item.href}
                       onClick={item.scroll ? (e) => handleNavClick(e, item.href) : undefined}
                       className={`text-sm font-medium transition-colors duration-300 ${scrolled
-                          ? "text-foreground/80 hover:text-foreground"
-                          : "text-white/90 hover:text-white"
+                        ? "text-foreground/80 hover:text-foreground"
+                        : "text-white/90 hover:text-white"
                         }`}
                     >
                       {item.label}
@@ -105,8 +105,8 @@ export function Navbar() {
                         aria-pressed={locale === lang}
                         aria-label={lang === "en" ? "Switch to English" : "Kalo në shqip"}
                         className={`rounded-full px-2 py-0.5 text-xs font-medium transition-colors duration-300 ${locale === lang
-                            ? scrolled ? "bg-foreground text-background" : "bg-white text-black"
-                            : scrolled ? "text-foreground/60 hover:text-foreground" : "text-white/70 hover:text-white"
+                          ? scrolled ? "bg-foreground text-background" : "bg-white text-black"
+                          : scrolled ? "text-foreground/60 hover:text-foreground" : "text-white/70 hover:text-white"
                           }`}
                       >
                         {lang.toUpperCase()}
@@ -132,82 +132,73 @@ export function Navbar() {
         </div>
       </header>
 
-      {/* Mobile Menu Overlay */}
-      {isMobileMenuOpen && mounted && (
-        <div
-          className="fixed inset-0 z-40 bg-black/20 backdrop-blur-sm md:hidden"
-          onClick={() => setIsMobileMenuOpen(false)}
-          aria-hidden="true"
-        />
-      )}
-
-      {/* Mobile Sidebar Navigation */}
-      <aside
+      {/* Mobile Fullscreen Overlay Menu */}
+      <div
         id="mobile-menu"
-        className={`fixed top-0 right-0 bottom-0 z-40 w-64 bg-white shadow-2xl md:hidden transition-transform duration-300 ease-out ${isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
-          }`}
+        className={`fixed inset-0 z-50 md:hidden flex flex-col transition-all duration-400 ${
+          isMobileMenuOpen && mounted
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
+        }`}
+        style={{ background: "rgba(10, 15, 30, 0.97)", backdropFilter: "blur(12px)" }}
         aria-hidden={!isMobileMenuOpen}
       >
-        <nav aria-label="Navigimi mobil" className="flex flex-col h-full">
-          {/* Close button and logo area */}
-          <div className="flex items-center justify-between p-4 border-b border-border">
-            <span className="text-sm font-semibold text-foreground">Menu</span>
-            <button
-              onClick={() => setIsMobileMenuOpen(false)}
-              aria-label="Mbylle menunë"
-              className="text-foreground/60 hover:text-foreground transition-colors"
+        {/* Top bar — centered logo, close button absolute right */}
+        <div className="relative flex items-center justify-center h-16 shrink-0">
+          <Image
+            src={withBasePath("/logos/logo-white.png")}
+            alt="Pannonian Logistics"
+            width={300}
+            height={120}
+            className="h-8 w-auto"
+          />
+          <button
+            onClick={() => setIsMobileMenuOpen(false)}
+            aria-label="Mbylle menunë"
+            className="absolute right-4 text-white/60 hover:text-white transition-colors"
+          >
+            <X className="h-6 w-6" aria-hidden="true" />
+          </button>
+        </div>
+
+        {/* Centered nav links */}
+        <nav aria-label="Navigimi mobil" className="flex flex-1 flex-col items-center justify-center gap-1">
+          {[
+            { href: "/", label: mounted ? t("nav.home") : "Home", action: () => setIsMobileMenuOpen(false) },
+            { href: "#about", label: mounted ? t("nav.about") : "About", action: (e: React.MouseEvent<HTMLAnchorElement>) => handleNavClick(e, "#about") },
+            { href: "#services", label: mounted ? t("nav.services") : "Services", action: (e: React.MouseEvent<HTMLAnchorElement>) => handleNavClick(e, "#services") },
+            { href: "/contact", label: mounted ? t("nav.contact") : "Contact", action: () => setIsMobileMenuOpen(false) },
+          ].map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              onClick={item.action}
+              className="px-8 py-4 text-3xl font-semibold text-white/70 hover:text-white transition-colors tracking-tight"
             >
-              <X className="h-5 w-5" aria-hidden="true" />
-            </button>
-          </div>
-
-          {/* Navigation Links */}
-          <ul role="list" className="flex-1 overflow-y-auto">
-            {[
-              { href: "/", label: mounted ? t("nav.home") : "Home", action: () => setIsMobileMenuOpen(false) },
-              { href: "#about", label: mounted ? t("nav.about") : "About", action: (e: React.MouseEvent<HTMLAnchorElement>) => handleNavClick(e, "#about") },
-              { href: "#services", label: mounted ? t("nav.services") : "Services", action: (e: React.MouseEvent<HTMLAnchorElement>) => handleNavClick(e, "#services") },
-              { href: "/contact", label: mounted ? t("nav.contact") : "Contact", action: () => setIsMobileMenuOpen(false) },
-            ].map((item) => (
-              <li key={item.href} className="border-b border-border/50 last:border-b-0">
-                <Link
-                  href={item.href}
-                  onClick={item.action}
-                  className="block px-6 py-4 text-base font-medium text-foreground/80 hover:text-foreground hover:bg-muted transition-all duration-200"
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-
-          {/* Language Switcher */}
-          <div className="border-t border-border p-4 space-y-3">
-            <p className="text-xs font-semibold text-foreground/60 uppercase tracking-wide px-2">
-              {t("nav.language") || "Language"}
-            </p>
-            <div role="group" aria-label="Zgjedh gjuhën" className="flex gap-2">
-              {(["en", "sq"] as Locale[]).map((lang) => (
-                <button
-                  key={lang}
-                  onClick={() => {
-                    handleLocaleChange(lang)
-                    setIsMobileMenuOpen(false)
-                  }}
-                  aria-pressed={locale === lang}
-                  aria-label={lang === "en" ? "Switch to English" : "Kalo në shqip"}
-                  className={`flex-1 rounded-lg px-3 py-2.5 text-sm font-semibold transition-all duration-200 ${locale === lang
-                      ? "bg-foreground text-background shadow-sm"
-                      : "bg-muted text-foreground/70 hover:bg-muted hover:text-foreground"
-                    }`}
-                >
-                  {lang.toUpperCase()}
-                </button>
-              ))}
-            </div>
-          </div>
+              {item.label}
+            </Link>
+          ))}
         </nav>
-      </aside>
+
+        {/* Bottom language row */}
+        <div className="flex items-center justify-center gap-3 px-6 py-8 shrink-0">
+          {(["en", "sq"] as Locale[]).map((lang) => (
+            <button
+              key={lang}
+              onClick={() => { handleLocaleChange(lang); setIsMobileMenuOpen(false) }}
+              aria-pressed={locale === lang}
+              aria-label={lang === "en" ? "Switch to English" : "Kalo në shqip"}
+              className={`px-6 py-2 rounded-full text-sm font-semibold transition-all duration-200 ${
+                locale === lang
+                  ? "bg-white text-black"
+                  : "text-white/40 hover:text-white border border-white/20 hover:border-white/50"
+              }`}
+            >
+              {lang.toUpperCase()}
+            </button>
+          ))}
+        </div>
+      </div>
     </>
   )
 }
