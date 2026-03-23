@@ -19,10 +19,22 @@
   },
   "stats": {
     "label": "Company statistics",
-    "deliveries": { "value": "500+", "label": "Deliveries Completed" },
-    "countries": { "value": "3", "label": "Countries Served" },
-    "experience": { "value": "10+", "label": "Years of Experience" },
-    "trucks": { "value": "20+", "label": "Vehicles in Fleet" }
+    "deliveries": {
+      "value": "500+",
+      "label": "Deliveries Completed"
+    },
+    "countries": {
+      "value": "3",
+      "label": "Countries Served"
+    },
+    "experience": {
+      "value": "10+",
+      "label": "Years of Experience"
+    },
+    "trucks": {
+      "value": "20+",
+      "label": "Vehicles in Fleet"
+    }
   },
   "about": {
     "title": "About Us",
@@ -88,13 +100,12 @@
   },
   "footer": {
     "tagline": "Transport and Logistics",
-    "phone": "044 123 389",
+    "phone": "044 133 389",
     "email": "info@pannonianlogistics.com",
-    "address": "Address: Rreto 06, p.n. 10000,",
-    "country": "Arbëri · Republic of Kosovo",
+    "address": "Address: Nato 99, p.n. 16000,",
+    "country": "Artanë · Republic of Kosovo",
     "privacy": "Privacy Policy",
     "accessibility": "Accessibility Statement",
     "copyright": "© 2025 Pannonian Logistics. All rights reserved."
   }
 }
-
