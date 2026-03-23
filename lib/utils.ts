@@ -6,7 +6,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 // For GitHub Pages deployment with basePath
-const basePath = process.env.NODE_ENV === 'production' ? '/Pannonian' : ''
+const basePath = ''
 
 export function withBasePath(path: string): string {
   if (!basePath) return path
