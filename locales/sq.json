@@ -19,10 +19,22 @@
   },
   "stats": {
     "label": "Statistikat e kompanisë",
-    "deliveries": { "value": "500+", "label": "Dërgesa të Kryera" },
-    "countries": { "value": "3", "label": "Shtete të Shërbyera" },
-    "experience": { "value": "10+", "label": "Vite Përvojë" },
-    "trucks": { "value": "20+", "label": "Automjete në Flotë" }
+    "deliveries": {
+      "value": "500+",
+      "label": "Dërgesa të Kryera"
+    },
+    "countries": {
+      "value": "3",
+      "label": "Shtete të Shërbyera"
+    },
+    "experience": {
+      "value": "10+",
+      "label": "Vite Përvojë"
+    },
+    "trucks": {
+      "value": "20+",
+      "label": "Automjete në Flotë"
+    }
   },
   "about": {
     "title": "Rreth Nesh",
@@ -88,13 +100,12 @@
   },
   "footer": {
     "tagline": "Transport dhe Logjistikë",
-    "phone": "044 123 389",
+    "phone": "044 133 389",
     "email": "info@pannonianlogistics.com",
-    "address": "Adresa: Rreto 06, p.n. 10000,",
-    "country": "Arbëri · Republika e Kosovës",
+    "address": "Adresa: Nato 99, p.n. 16000,",
+    "country": "Artanë · Republika e Kosovës",
     "privacy": "Privacy Policy",
     "accessibility": "Accessibility Statement",
     "copyright": "© 2025 Pannonian Logistics. Të gjitha të drejtat e rezervuara."
   }
 }
-
