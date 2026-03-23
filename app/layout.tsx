@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   authors: [{ name: 'Pannonian Logistics' }],
   creator: 'Pannonian Logistics',
   publisher: 'Pannonian Logistics',
-  metadataBase: new URL('https://pannonianlogistics.com'),
+  metadataBase: new URL('https://www.pannonianlogistics.com'),
   alternates: {
     canonical: '/',
     languages: {
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Pannonian Logistics | Transport dhe Logjistikë në Kosovë',
     description: 'Zgjidhja juaj e besueshme për transport dhe logjistikë në Kosovë. Shërbime të shpejta, të sigurta dhe profesionale.',
-    url: 'https://pannonianlogistics.com',
+    url: 'https://www.pannonianlogistics.com',
     siteName: 'Pannonian Logistics',
     locale: 'sq_AL',
     type: 'website',
@@ -126,10 +126,10 @@ export const viewport: Viewport = {
 const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
-  '@id': 'https://pannonianlogistics.com/#business',
+  '@id': 'https://www.pannonianlogistics.com/#business',
   name: 'Pannonian Logistics',
   description: 'Professional freight transport and logistics services across Kosovo, Albania, and North Macedonia',
-  url: 'https://pannonianlogistics.com',
+  url: 'https://www.pannonianlogistics.com',
   telephone: '+38344123389',
   email: 'info@pannonianlogistics.com',
   address: {
@@ -194,8 +194,8 @@ const localBusinessSchema = {
       }
     ]
   },
-  logo: `https://pannonianlogistics.com${withBasePath('/logos/footer-logo.png')}`,
-  image: `https://pannonianlogistics.com${withBasePath('/og-image.jpg')}`,
+  logo: `https://www.pannonianlogistics.com${withBasePath('/logos/footer-logo.png')}`,
+  image: `https://www.pannonianlogistics.com${withBasePath('/og-image.jpg')}`,
   knowsLanguage: ['sq', 'en'],
   paymentAccepted: 'Cash, Bank Transfer',
   currenciesAccepted: 'EUR'
@@ -205,10 +205,10 @@ const localBusinessSchema = {
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  '@id': 'https://pannonianlogistics.com/#organization',
+  '@id': 'https://www.pannonianlogistics.com/#organization',
   name: 'Pannonian Logistics',
-  url: 'https://pannonianlogistics.com',
-  logo: `https://pannonianlogistics.com${withBasePath('/logos/footer-logo.png')}`,
+  url: 'https://www.pannonianlogistics.com',
+  logo: `https://www.pannonianlogistics.com${withBasePath('/logos/footer-logo.png')}`,
   description: 'Professional logistics and freight transport company',
   contactPoint: [
     {
@@ -244,7 +244,7 @@ const breadcrumbSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'Home',
-      item: 'https://pannonianlogistics.com/'
+      item: 'https://www.pannonianlogistics.com/'
     }
   ]
 }
@@ -301,12 +301,12 @@ const faqSchema = {
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  '@id': 'https://pannonianlogistics.com/#website',
-  url: 'https://pannonianlogistics.com',
+  '@id': 'https://www.pannonianlogistics.com/#website',
+  url: 'https://www.pannonianlogistics.com',
   name: 'Pannonian Logistics',
   description: 'Professional freight transport and logistics services',
   publisher: {
-    '@id': 'https://pannonianlogistics.com/#organization'
+    '@id': 'https://www.pannonianlogistics.com/#organization'
   },
   inLanguage: ['sq', 'en']
 }

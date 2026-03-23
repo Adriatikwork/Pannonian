@@ -11,11 +11,8 @@ const nextConfig = {
   },
   output: 'export',
   trailingSlash: true,
-  basePath: '/Pannonian',
-  assetPrefix: '/Pannonian',
-  env: {
-    NEXT_PUBLIC_BASE_PATH: '/Pannonian',
-  },
+  basePath: '',
+  assetPrefix: '',
 }
 
 export default nextConfig

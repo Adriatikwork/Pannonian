@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Na Kontaktoni | Pannonian Logistics",
     description: "Kontaktoni Pannonian Logistics për shërbime transporti të besueshme dhe efikase.",
-    url: "https://pannonianlogistics.com/contact",
+    url: "https://www.pannonianlogistics.com/contact",
   },
 }
 
