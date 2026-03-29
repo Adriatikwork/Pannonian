@@ -91,7 +91,7 @@ export function ContactForm() {
     try {
       await emailjs.send(
         "service_o22zw4p",
-        "template_ptnyrko",
+        "template_9il3lhh",
         {
           from_name: `${formData.firstName} ${formData.lastName}`,
           from_email: formData.email,
