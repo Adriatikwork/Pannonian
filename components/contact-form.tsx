@@ -89,13 +89,17 @@ export function ContactForm() {
     setSubmitStatus("idle")
 
     try {
+      const phoneWithCountryCode = selectedCountry
+        ? `${selectedCountry.dial}${formData.phone}`
+        : formData.phone
+
       await emailjs.send(
         "service_o22zw4p",
         "template_9il3lhh",
         {
           from_name: `${formData.firstName} ${formData.lastName}`,
           from_email: formData.email,
-          phone: formData.phone,
+          phone: phoneWithCountryCode,
           subject: formData.subject,
           message: formData.message,
           to_name: "Pannonian",
