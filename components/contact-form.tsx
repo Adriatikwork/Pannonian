@@ -1,8 +1,9 @@
 "use client"
 
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 import { useI18n } from "@/lib/i18n"
 import { ChevronDown, Globe, Search, X } from "lucide-react"
+import emailjs from "@emailjs/browser"
 
 const COUNTRY_CODES = [
   { code: "AF", name: "Afghanistan", dial: "+93" },
@@ -64,7 +65,13 @@ export function ContactForm() {
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const [search, setSearch] = useState("")
   const [submitted, setSubmitted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
   const dropdownRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    emailjs.init("v5OW83ip_0onL4R23")
+  }, [])
 
   const filtered = COUNTRY_CODES.filter(
     (c) =>
@@ -76,10 +83,42 @@ export function ContactForm() {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // EmailJS will be wired here later
-    setSubmitted(true)
+    setIsSubmitting(true)
+    setSubmitStatus("idle")
+
+    try {
+      await emailjs.send(
+        "service_o22zw4p",
+        "template_ptnyrko",
+        {
+          from_name: `${formData.firstName} ${formData.lastName}`,
+          from_email: formData.email,
+          phone: formData.phone,
+          subject: formData.subject,
+          message: formData.message,
+          to_name: "Pannonian",
+        },
+        "v5OW83ip_0onL4R23"
+      )
+
+      setSubmitStatus("success")
+      setSubmitted(true)
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        subject: "",
+        message: "",
+      })
+    } catch (error) {
+      console.error("Email send failed:", error)
+      setSubmitStatus("error")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -263,10 +302,17 @@ export function ContactForm() {
           {/* Submit */}
           <button
             type="submit"
-            className="w-full rounded-full bg-foreground py-4 text-base font-semibold text-background transition-opacity hover:opacity-80"
+            disabled={isSubmitting}
+            className="w-full rounded-full bg-foreground py-4 text-base font-semibold text-background transition-opacity hover:opacity-80 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {t("contact.submit")}
+            {isSubmitting ? t("contact.sending") : t("contact.submit")}
           </button>
+          
+          {submitStatus === "error" && (
+            <div className="rounded-2xl border border-red-500/30 bg-red-500/10 p-4 text-center">
+              <p className="text-sm text-red-600">{t("contact.errorMessage") || "Failed to send message. Please try again."}</p>
+            </div>
+          )}
         </form>
       )}
     </section>
